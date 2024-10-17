@@ -1,0 +1,21 @@
+Projekt: Ritprogram
+
+Modell (Model)
+Modellen kommer att hålla all data och logik för programmet. I denna del ska vi hantera de ritade objekten, färger och former, samt undo/redo-funktionaliteten.
+
+Klasser:
+DrawingModel: Hanterar alla ritade objekt och deras egenskaper. Inkluderar funktionalitet för att lägga till, ta bort och hantera objekt samt undo/redo-listor.
+Shape: En abstrakt klass för de former som ska ritas. Innehåller grundläggande attribut som färg och storlek.
+Rectangle och Oval: Ärver från Shape och implementerar specifika egenskaper för rektanglar och ovaler.
+Vy (View)
+Vyn är ansvarig för att presentera ritprogrammet för användaren. Den ska visa ritytan, färgvalsknappar, formvalsknappar, undo, save och load-knappar, samt visa programmets tillstånd längst ner i fönstret.
+
+Klasser:
+DrawingView: Visar ritytan och de ritade objekten. Uppdaterar sig baserat på användarens val och åtgärder.
+ControlPanel: Visar färgval, formval, samt knappar för undo, save och load.
+StatusBar: Visar nuvarande programtillstånd, t.ex. vald färg och form, längst ner i fönstret.
+Kontroller (Controller)
+Kontrollern ska hantera användarens interaktioner med programmet. Den ska läsa in knapptryckningar och musrörelser, och därefter uppdatera modellen och vyn.
+
+Klasser:
+DrawingController: Hanterar användarens interaktioner, som musnedtryckning, dragning och knapptryckningar. Den samverkar med DrawingModel för att uppdatera ritningen, samt med DrawingView för att uppdatera visningen. Har också funktionalitet för att spara och läsa in ritningen.
