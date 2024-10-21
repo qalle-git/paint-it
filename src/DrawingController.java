@@ -260,11 +260,12 @@ public class DrawingController {
                     Shapes.Shape shape = (Shapes.Shape) objectInputStream.readObject();
 
                     myModel.addShape(shape);
-                    myView.repaint();
                 } catch (ClassNotFoundException | EOFException e) {
                     break;
                 }
             }
+
+            myView.repaint();
 
             objectInputStream.close();
         } catch (Exception e) {
